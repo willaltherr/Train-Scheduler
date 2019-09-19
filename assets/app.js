@@ -51,3 +51,7 @@ $("#destination-input").val("");
 $("#start-input").val("");
 $("#frequency-input").val("");
 });
+
+// 3. Create Firebase event for adding trains to the database and a row in the html when a user adds an entry
+database.ref().on("child_added", function(childSnapshot) {
+  console.log(childSnapshot.val());

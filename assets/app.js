@@ -61,3 +61,9 @@ database.ref().on("child_added", function(childSnapshot) {
   var trainDestination = childSnapshot.val().destination;
   var trainStart = childSnapshot.val().start;
   var trainFrequency = childSnapshot.val().frequency;
+
+// Train Info
+  console.log(trainName);
+  console.log(trainDestination);
+  console.log(trainStart);
+  console.log(trainFrequency);

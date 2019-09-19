@@ -68,6 +68,21 @@ database.ref().on("child_added", function(childSnapshot) {
   console.log(trainStart);
   console.log(trainFrequency);
 
+  //Calculate Next Arrival
+  var nextArrival = 
 
+  //Calculate Minutes Away
+  var minAway = 
 
+// Create the new row
+  var newRow = $("<tr>").append(
+    $("<td>").text(trainName),
+    $("<td>").text(trainDestination),
+    $("<td>").text(trainFrequency),
+    $("<td>").text(nextArrival),
+    $("<td>").text(minAway),
+  );
+
+  // Append the new row to the table
+  $("#train-table > tbody").append(newRow);
 });

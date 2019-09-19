@@ -33,3 +33,6 @@ var newTrain = {
   start: trainStart,
   frequency: trainFrequency
 };
+
+// Uploads train data to the database
+database.ref().push(newTrain);

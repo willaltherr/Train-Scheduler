@@ -24,3 +24,12 @@ var trainName = $("#train-name-input").val().trim();
 var trainDestination = $("#destination-input").val().trim();
 var trainStart = moment($("#start-input").val().trim()).format('LT');
 var trainFrequency = $("#frequency-input").val().trim();
+
+// Creates local "temporary" object for holding train data
+
+var newTrain = {
+  name: trainName,
+  destination: trainDestination,
+  start: trainStart,
+  frequency: trainFrequency
+};

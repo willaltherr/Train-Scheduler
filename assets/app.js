@@ -12,3 +12,8 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database();
+
+// 2. Button for adding Trains
+
+$("#add-train-btn").on("click", function(event) {
+  event.preventDefault();

@@ -36,3 +36,11 @@ var newTrain = {
 
 // Uploads train data to the database
 database.ref().push(newTrain);
+
+// Logs everything to console
+console.log(newTrain.name);
+console.log(newTrain.destination);
+console.log(newTrain.start);
+console.log(newTrain.frequency);
+
+alert("Train successfully added");

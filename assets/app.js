@@ -17,3 +17,10 @@ var database = firebase.database();
 
 $("#add-train-btn").on("click", function(event) {
   event.preventDefault();
+
+// Grabs user input
+
+var trainName = $("#train-name-input").val().trim();
+var trainDestination = $("#destination-input").val().trim();
+var trainStart = moment($("#start-input").val().trim()).format('LT');
+var trainFrequency = $("#frequency-input").val().trim();

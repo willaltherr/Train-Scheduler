@@ -68,20 +68,20 @@ database.ref().on("child_added", function(childSnapshot) {
   console.log(trainStart);
   console.log(trainFrequency);
 
-  //Calculate Next Arrival
-  var nextArrival;
-  //Change Year so first train comes before now
-  var nextArrival = moment(childSnapshot.val().trainStart, "hh:mm").subtract(1, "years");
-  // Difference between the current and firstTrain
-  var diffTime = moment().diff(moment(nextArrival), "minutes");
-  var remainder = diffTime % childSnapshot.val().trainFrequency;
+// First Time Pushed Back 1 Year
+var firstTime = moment(trainStart, "hh:mm").subtract(1, "years");
 
-  // Minutes until next train
-  var minAway = childSnapshot.val().trainFrequency - remainder;
+// Difference Between Times
+var diffTime = moment().diff(moment(firstTime), "minutes");
 
-  // Next train time
-  var nextTrain = moment().add(minAway, "minutes");
-  nextTrain = moment(nextTrain).format("hh:mm");
+//Time Apart - Remainder
+var timeRemainder = diffTime % trainFrequency;
+
+//Determine Minutes Away
+var minAway = trainFrequency - timeRemainder;
+
+//Determine Next Train Arrival
+var nextTrain = moment().add(minAway, "minutes").format("hh:mm a");
 
 // Create the new row
   var newRow = $("<tr>").append(

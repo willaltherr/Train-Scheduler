@@ -69,7 +69,7 @@ database.ref().on("child_added", function(childSnapshot) {
   console.log(trainFrequency);
 
 // First Time Pushed Back 1 Year
-var firstTime = moment(trainStart, "hh:mm").subtract(1, "years");
+var firstTime = moment(trainStart, "HH:mm").subtract(1, "years");
 
 // Difference Between Times
 var diffTime = moment().diff(moment(firstTime), "minutes");
@@ -81,7 +81,7 @@ var timeRemainder = diffTime % trainFrequency;
 var minAway = trainFrequency - timeRemainder;
 
 //Determine Next Train Arrival
-var nextTrain = moment().add(minAway, "minutes").format("hh:mm a");
+var nextTrain = moment().add(minAway, "minutes").format("HH:mm a");
 
 // Create the new row
   var newRow = $("<tr>").append(
